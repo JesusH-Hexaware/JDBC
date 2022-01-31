@@ -35,6 +35,17 @@ public class JDBC {
             }else{
             sqlException.printStackTrace();
             }
+        } finally {
+            try{
+                if (sentencia != null){
+                    sentencia.close();
+                }
+                if (conexion != null){
+                    conexion.close();
+                }
+            } catch (Exception e){
+                e.printStackTrace();
+            }
         }
     }
 
@@ -66,6 +77,17 @@ public class JDBC {
                 System.out.println(sqlException.getMessage());
             } else {
                 sqlException.printStackTrace();
+            }
+        } finally {
+            try{
+                if (sentencia != null){
+                    sentencia.close();
+                }
+                if (conexion != null){
+                    conexion.close();
+                }
+            } catch (Exception e){
+                e.printStackTrace();
             }
         }
     }
